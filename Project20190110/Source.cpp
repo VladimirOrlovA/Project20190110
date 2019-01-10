@@ -60,8 +60,26 @@ void Task2()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask2\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int N = 10;
+	int i, j, A[N], c;
+
+	for (i = 0; i < N; i++)  A[i] = 2 + rand() % 9;
+
+	for (i = 0; i < N; i++)  printf("A[%d]=%d \n", i, A[i]);
+
+	for (i = 0; i < N - 1; i++)
+		for (j = N - 2; j >= i; j--)
+			if (A[j] > A[j + 1])
+			{
+				c = A[j]; A[j] = A[j + 1];
+				A[j + 1] = c;
+			}
+
+	printf("\n Отсортированнный массив : \n");
+	for (i = 0; i < N; i++) printf("A[%d]=%d \n", i, A[i]);
+	
 }
 
 
