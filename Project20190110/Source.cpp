@@ -4,14 +4,55 @@
 #include<time.h>
 #include<Windows.h>
 
+#define size 10
+
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 void Task1()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask1\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int a[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int i, x, center, minIndex=0, maxIndex=0, min=0, max=0;
+
+	for (i = 0; i < size; i++)
+	{
+		printf("a[%d]=%d \n", i, a[i]);
+	}
+
+	printf("\n");
+	
+
+	for (i = 0; i < (size / 2); i++)
+	{
+		x = a[i];
+		a[i] = a[size - 1 - i];
+		a[size - 1 - i] = x;
+	}
+
+
+	for (i = 0; i < size; i++)
+	{
+		printf("a[%d]=%d \n", i, a[i]);
+	}
+
+	
+		if (a[i] > min)
+		{
+			min = a[i];
+			minIndex = i;
+		}
+		
+		if (a[i] > min)
+		{
+			max = a[i];
+			maxIndex = i;
+		}
+
+		
+
 }
 
 
