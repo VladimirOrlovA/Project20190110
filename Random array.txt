@@ -1,0 +1,49 @@
+int g;
+	int A[size] = {0};
+
+	//srand(time(NULL));
+
+	for (size_t i = 0; i < size; i++)
+	{
+		g = 1 + rand() % 40;
+		if (i == 0)
+		{
+			A[i] = g;
+		}
+		else
+		{
+			for (size_t j = 0; j < i; j++)
+			{ 
+				if (A[j] == g)
+				{
+					g = 1 + rand() % 40;
+					j = -1; 
+				}
+			}
+			A[i] = g;
+		}
+		printf("A[%d] = %d\n", i, A[i]);
+	}
+
+	int x = 0;
+	int it = 0;
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = size - 2; j >= i; j--)
+		{
+			if (A[j] < A[j + 1])
+			{
+				x = A[j];
+				A[j] = A[j + 1];
+				A[j + 1] = x;
+
+				it++;
+			}
+		}
+	}
+	printf("\nAfter sorting\n");
+
+	for (size_t i = 0; i < size; i++)
+	{
+		printf("A[%d] = %d\n", i, A[i]);
+	}

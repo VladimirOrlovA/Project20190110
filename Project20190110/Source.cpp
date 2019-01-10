@@ -77,7 +77,8 @@ void Task2()
 				A[j + 1] = c;
 			}
 
-	printf("\n Отсортированнный массив : \n");
+	printf("\n Отсортированнный массив : \n\n");
+
 	for (i = 0; i < N; i++) printf("A[%d]=%d \n", i, A[i]);
 	
 }
@@ -89,6 +90,47 @@ void Task3()
 	printf("\n--------------------------------------------------------------------------\n\nTask3\n\n");
 	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int N = 5;
+	int i, j, A[N], c, result = 0;
+
+	for (i = 0; i < N; i++)
+	{
+		A[i] = 1 + rand() % 10;
+	   
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		c = A[i];
+		
+		if (c == A[i]) A[i] = 1 + rand() % 10;
+		
+	}
+
+
+
+
+
+
+
+	for (i = 0; i < N; i++)  printf("A[%d]=%d \n", i, A[i]);
+
+	/*for (i = 0; i < N; i++)
+	{
+		result = result + A[i];
+	}
+	printf("\n Сумма всех элементов массива = %d", result);
+
+	for (i = 0; i < N; i++)
+	{
+		result = result * A[i];
+	}
+	printf("\n Произведение всех элементов массива = %d", result);
+	
+
+	//for (i = 0; i < N; i++) printf("A[%d]=%d \n", i, A[i]); */
+
 }
 
 
@@ -98,6 +140,9 @@ void Task4()
 	printf("\n--------------------------------------------------------------------------\n\nTask4\n\n");
 	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+
+
 }
 
 
