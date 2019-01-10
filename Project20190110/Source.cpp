@@ -92,12 +92,11 @@ void Task3()
 	SetConsoleTextAttribute(hConsole, 7);
 
 	const int N = 5;
-	int i, j, A[N], c, result = 0;
+	int i, j, A[N], c, result = 1;
 
 	for (i = 0; i < N; i++)
 	{
-		A[i] = 1 + rand() % 10;
-	   
+		if(i==0) A[i] = 1 + rand() % 10;
 	}
 
 	for (i = 0; i < N; i++)
@@ -122,7 +121,7 @@ void Task3()
 	}
 	printf("\n Сумма всех элементов массива = %d", result);
 
-	for (i = 0; i < N; i++)
+	for (i = 0; i < N; i++) 
 	{
 		result = result * A[i];
 	}
